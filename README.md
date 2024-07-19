@@ -15,6 +15,7 @@ Welcome to CodeQuest, the quiz game that's more addictive than trying to fix a b
 - 🎊 **Confetti**: Celebrate your achievements with a rainbow of confetti!
 - 🏆 **Score Sharing**: Brag about your big brain energy on social media
 - 📱 **Responsive Design**: Looks great on everything from your smartwatch to your smart fridge
+- 🧙‍♂️ **Question Generation**: Generate question creation prompts to use with your favorite LLM!
 
 ## 🎭 Question Features (The Real Stars of the Show)
 
@@ -28,6 +29,35 @@ Welcome to CodeQuest, the quiz game that's more addictive than trying to fix a b
 - 📚 **Explanations**: Give detailed explanations for answers to enhance learning
 
 Check out `example-question.md` for a comprehensive example of all these features in action!
+
+## 🧙‍♂️ Question Generation (Let AI Do the Heavy Lifting)
+
+Too busy debugging to craft questions? Fear not! We've conjured up a magical script to help you generate question prompts faster than you can say "Stack Overflow":
+
+1. Wave your wand (or just type in your terminal):
+   ```
+   bun run question-prompt
+   ```
+
+2. Answer the mystical prompt asking how many questions you desire (choose wisely, young wizard!)
+
+3. Behold as a perfectly crafted prompt materializes before your eyes!
+
+4. Feed this prompt to your favorite AI familiar (we recommend Claude 3.5 Sonnet or GPT-4o for best results) and watch in awe as it conjures up quiz questions that would make even Merlin jealous.
+
+5. Copy the AI-generated questions into new `.md` files in your `src/questions/` directory, and voilà! Your quiz just got a whole lot smarter.
+
+Want to save your prompt for later? Use the `-o` flag:
+```
+bun run question-prompt -o prompt.md
+```
+
+Need a helping hand? Just ask:
+```
+bun run question-prompt -h
+```
+
+Remember, with great power comes great responsibility. Use this feature wisely, and may your questions be ever engaging and your quizzes eternally awesome! 🧙‍♂️✨
 
 ## 🚀 Quick Start Guide (No Rocket Science Degree Required)
 
