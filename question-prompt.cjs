@@ -21,20 +21,25 @@ async function generatePrompt(numQuestions) {
     const exampleQuestion = await fs.readFile(path.join(__dirname, 'example-question.md'), 'utf8');
 
     return `
-You are an expert quiz creator for the CodeQuest project. Your task is to create ${numQuestions} new question(s) for our fun, engaging and playful quiz game. Here are the guidelines:
+You are an expert quiz creator for the CodeQuest quiz game. Your task is to create ${numQuestions} new question(s) for our fun, engaging and playful quiz game. Here are the guidelines:
 
 1. Each question should be in Markdown format, similar to the example provided below.
 2. Questions should increase in difficulty as they progress.
-3. The title and description should be fun, descriptive and engaging. Use alliterations and wordplay to make them stand out.
-3. Use the following features where appropriate:
+3. Questions can be about code snippets, concepts, problems, or anything else that is relevant to quiz's topic.
+4. The title and description should be fun, descriptive and engaging. Use alliterations and wordplay to make them stand out.
+5. Use some timed questions, but not too many
+6. Use the following features where appropriate:
    - Markdown formatting (bold, italics, code blocks, lists etc.)
    - Multiple choice answers
    - Time limits (optional)
    - Difficulty levels (Beginner, Intermediate, Expert) (optional)
    - Hints
    - Explanations
+7. Surround each markdown question file with ~~~ and ~~~
+8. Use \`\`\`lang for code blocks or \` for inline code inside the markdown question files
 
-4. The structure should be exactly as follows:
+
+9. The structure should be exactly as follows:
    ---
    title: [Question Title]
    description: [Brief description]
@@ -67,9 +72,9 @@ You are an expert quiz creator for the CodeQuest project. Your task is to create
    ## Hint
    [Optional hint for the question]
 
-5. Prefer short answer options, but use code fences for longer code snippets if necessary.
-6. Ensure questions are relevant to coding, technology, or related fields.
-7. Be creative and make the questions engaging!
+10. Prefer short answer options, but use code fences for longer code snippets if it's necessary for the question.
+11. Ensure questions are relevant to the topic of the quiz.
+12. Be creative and make the questions engaging and fun!
 
 Here's an example question for reference:
 
