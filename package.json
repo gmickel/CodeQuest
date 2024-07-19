@@ -1,0 +1,53 @@
+{
+  "name": "codequest",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "bun@1.1.17",
+  "description": "An interactive quiz game framework to build your own quests!",
+  "author": {
+    "name": "Gordon Mickel",
+    "email": "gordon@mickel.tech"
+  },
+  "license": "MIT",
+  "homepage": "https://gmickel.github.io/codequest",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@radix-ui/react-alert-dialog": "1.1.1",
+    "@radix-ui/react-collapsible": "1.1.0",
+    "@radix-ui/react-progress": "1.1.0",
+    "@radix-ui/react-slot": "1.1.0",
+    "@radix-ui/react-tooltip": "1.1.2",
+    "class-variance-authority": "0.7.0",
+    "clsx": "2.1.1",
+    "gray-matter": "^4.0.3",
+    "lucide-react": "0.408.0",
+    "marked": "^13.0.2",
+    "react": "18.3.1",
+    "react-confetti": "6.1.0",
+    "react-dom": "18.3.1",
+    "shiki": "1.10.3",
+    "tailwind-merge": "2.4.0",
+    "tailwindcss-animate": "1.0.7",
+    "yaml": "^2.4.5"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "2.23.0",
+    "@types/node": "20.14.11",
+    "@types/react": "18.3.3",
+    "@types/react-dom": "18.3.0",
+    "@vitejs/plugin-react": "4.3.1",
+    "autoprefixer": "10.4.19",
+    "eslint": "9.7.0",
+    "postcss": "8.4.39",
+    "tailwindcss": "3.4.6",
+    "typescript": "5.5.3",
+    "vite": "5.3.4"
+  }
+}
