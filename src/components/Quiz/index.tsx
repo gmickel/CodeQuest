@@ -21,7 +21,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
-import HealthBar from '@/components/HealthBar';
+import HealthBar from '@/components/Quiz/HealthBar';
 import useSoundEffects from '@/hooks/useSoundEffects';
 import type { ParsedQuestion } from '@/lib/markdownParser.ts';
 import { loadAllQuestions } from '@/lib/markdownParser.ts';
