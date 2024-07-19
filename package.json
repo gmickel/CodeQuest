@@ -10,7 +10,7 @@
     "email": "gordon@mickel.tech"
   },
   "license": "MIT",
-  "homepage": "https://gmickel.github.io/codequest",
+  "homepage": "https://gmickel.github.io/CodeQuest",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
