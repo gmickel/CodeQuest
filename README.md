@@ -111,16 +111,42 @@ Remember, with great power comes great responsibility. Use these features wisely
 
 ## 🌐 Deploying Your Quest to the World (aka. GitHub Pages)
 
-1. Push your changes to GitHub. (Don't forget to `git add .` and `git commit -m "Made my quiz awesome"`)
+## Deployment Steps
 
-2. Go to your repository settings, find the "Pages" section, and set the source to the `gh-pages` branch.
+1. Push your changes to GitHub:
 
-3. Run the deployment spell:
-   ```
-   bun run deploy
-   ```
+```bash
+git add .
+git commit -m "Made my quiz awesome"
+git push
+```
 
-4. Watch in awe as your quiz magically appears at `https://yourusername.github.io/codequest`!
+2. Go to your repository settings on GitHub, find the "Pages" section.
+
+3. Under "Source", select "GitHub Actions" instead of a branch.
+
+4. Modify your `vite.config.ts` file to include the correct base path:
+
+```typescript
+export default defineConfig({
+  // ... other config options
+  base: '/your-repo-name/', // Replace with your actual repository name
+});
+```
+
+5. Commit these changes and push to GitHub:
+
+```bash
+git add vite.config.ts
+git commit -m "Configure GitHub Actions deployment"
+git push
+```
+
+6. GitHub Actions will now automatically build and deploy your site when you push to the main branch.
+
+8. Watch in awe as your quiz magically appears at `https://yourusername.github.io/ypir-repo-name/`!
+
+**Note**: The first deployment might take a few minutes. You can check the progress in the "Actions" tab of your GitHub repository.
 
 ## 🤝 Contributing (Because Teamwork Makes the Dream Work)
 
