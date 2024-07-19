@@ -1,5 +1,5 @@
 export const config = {
-  title: 'Code Quest',
+  title: 'CodeQuest',
   description: 'How far can you go?',
   url: 'https://gmickel.github.io/codequest',
   twitter: '@gmickel',
