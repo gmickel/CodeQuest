@@ -1,10 +1,11 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { AlertCircle, Brain, Github, Shield, Terminal, Volume2, VolumeX, Zap } from 'lucide-react';
-import GameOver from './GameOver.tsx';
-import Completion from './Completion.tsx';
-import Context from './Context.tsx';
-import Answers from './Answers.tsx';
-import Result from './Result.tsx';
+import GameOver from '@/components/Quiz/GameOver';
+import Completion from '@/components/Quiz/Completion';
+import Context from '@/components/Quiz/Context';
+import Answers from '@/components/Quiz/Answers';
+import Result from '@/components/Quiz/Result';
+import LoadingScreen from '@/components/LoadingScreen';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
 import {
@@ -207,7 +208,7 @@ const Quiz: React.FC = () => {
   };
 
   if (isLoading) {
-    return <div>Loading questions...</div>;
+    return <LoadingScreen message="Loading questions..." />;
   }
 
   if (gameState.playerHealth <= 0) {
