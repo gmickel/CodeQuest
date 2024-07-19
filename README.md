@@ -30,9 +30,11 @@ Welcome to CodeQuest, the quiz game that's more addictive than trying to fix a b
 
 Check out `example-question.md` for a comprehensive example of all these features in action!
 
-## 🧙‍♂️ Question Generation (Let AI Do the Heavy Lifting)
+## 🧙‍♂️ Question Generation and Management (Let AI Do the Heavy Lifting)
 
-Too busy debugging to craft questions? Fear not! We've conjured up a magical script to help you generate question prompts faster than you can say "Stack Overflow":
+Too busy debugging to craft questions? Fear not! We've conjured up magical scripts to help you generate and manage questions faster than you can say "Stack Overflow":
+
+### Generate Question Prompts
 
 1. Wave your wand (or just type in your terminal):
    ```
@@ -43,9 +45,7 @@ Too busy debugging to craft questions? Fear not! We've conjured up a magical scr
 
 3. Behold as a perfectly crafted prompt materializes before your eyes!
 
-4. Feed this prompt to your favorite AI familiar (we recommend Claude 3.5 Sonnet or GPT-4o for best results) and watch in awe as it conjures up quiz questions that would make even Merlin jealous.
-
-5. Copy the AI-generated questions into new `.md` files in your `src/questions/` directory, and voilà! Your quiz just got a whole lot smarter.
+4. Feed this prompt to your favorite AI familiar (we recommend Claude 3.5 Sonnet or GPT-4 for best results) and watch in awe as it conjures up quiz questions that would make even Merlin jealous.
 
 Want to save your prompt for later? Use the `-o` flag:
 ```
@@ -57,7 +57,24 @@ Need a helping hand? Just ask:
 bun run question-prompt -h
 ```
 
-Remember, with great power comes great responsibility. Use this feature wisely, and may your questions be ever engaging and your quizzes eternally awesome! 🧙‍♂️✨
+### Create Question Files Automatically
+
+Got a bunch of AI-generated questions? Turn them into properly formatted files with a flick of your wand:
+
+1. Copy your AI-generated questions into a single text file.
+
+2. Cast the file creation spell:
+   ```
+   python create_question_files.py
+   ```
+
+3. When prompted, paste your entire block of questions into the terminal and press Enter, followed by Ctrl+D (or Cmd+D on Mac) to signal the end of input.
+
+4. Watch in amazement as individual `.md` files appear in your `src/questions/` directory, each named according to its level and title!
+
+Need to customize the script? Find it in `create_question_files.py` in the root directory and tweak to your heart's content!
+
+Remember, with great power comes great responsibility. Use these features wisely, and may your questions be ever engaging and your quizzes eternally awesome! 🧙‍♂️✨
 
 ## 🚀 Quick Start Guide (No Rocket Science Degree Required)
 
