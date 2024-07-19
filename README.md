@@ -148,6 +148,11 @@ git push
 
 **Note**: The first deployment might take a few minutes. You can check the progress in the "Actions" tab of your GitHub repository.
 
+## 🧠 Quizzes made with CodeQuest
+
+- [OpenEHR Quest](https://github.com/gmickel/openehr-quest): A quiz game for learning about OpenEHR
+- [TypeScript Quest](https://github.com/gmickel/typescript-quest): A quiz game for learning TypeScript
+
 ## 🤝 Contributing (Because Teamwork Makes the Dream Work)
 
 Got an idea that's so good it keeps you up at night? Here's how to make it a reality:
@@ -158,7 +163,9 @@ Got an idea that's so good it keeps you up at night? Here's how to make it a rea
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request and wait for the internet high-fives!
 
-Check out the [contribution guide](CONTRIBUTING.md) for more details on adding questions and features!
+### If you use CodeQuest to make your own quests 🚀
+
+Feel free to add your quests to the list above!
 
 ## 📜 License
 
