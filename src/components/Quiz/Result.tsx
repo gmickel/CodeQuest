@@ -6,10 +6,11 @@ import RenderContent from '@/components/RenderContent';
 interface ResultProps {
   isCorrect: boolean;
   explanation: string;
+  isLastQuestion: boolean;
   onNext: () => void;
 }
 
-const Result: React.FC<ResultProps> = ({ isCorrect, explanation, onNext }) => {
+const Result: React.FC<ResultProps> = ({ isCorrect, explanation, isLastQuestion, onNext }) => {
   return (
     <>
       <Alert className={`mt-4 ${isCorrect ? 'bg-green-100' : 'bg-red-100'}`}>
@@ -18,9 +19,17 @@ const Result: React.FC<ResultProps> = ({ isCorrect, explanation, onNext }) => {
           <RenderContent content={explanation} />
         </AlertDescription>
       </Alert>
-      <Button onClick={onNext} className="w-full mt-4">
-        Next Level
-      </Button>
+      {isLastQuestion
+        ? (
+            <Button onClick={onNext} className="w-full mt-4">
+              Show Results
+            </Button>
+          )
+        : (
+            <Button onClick={onNext} className="w-full mt-4">
+              Next Level
+            </Button>
+          )}
     </>
   );
 };

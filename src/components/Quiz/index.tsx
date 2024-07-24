@@ -59,8 +59,10 @@ const Quiz: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isAdditionalInformationOpen, setIsAdditionalInformationOpen] = useState(false);
   const [timeRemaining, setTimeRemaining] = useState<number | null>(null);
+  const [isQuizComplete, setIsQuizComplete] = useState(false);
 
   const currentQuestion = useMemo(() => questions[gameState.currentLevel], [questions, gameState.currentLevel]);
+  const isLastQuestion = gameState.currentLevel === questions.length - 1;
 
   const handleAnswer = useCallback((selectedIndex: number) => {
     setSelectedAnswer(selectedIndex);
@@ -148,9 +150,14 @@ const Quiz: React.FC = () => {
       if (prevState.isCorrect && prevState.answeredWithoutHint) {
         newBadges.push(`Level ${prevState.currentLevel + 1} Master`);
       }
+      const newLevel = prevState.currentLevel + 1;
+      if (isLastQuestion) {
+        setIsQuizComplete(true);
+        return prevState; // Don't update the state if it's the last question
+      }
       return {
         ...prevState,
-        currentLevel: prevState.currentLevel + 1,
+        currentLevel: newLevel,
         hintUsed: false,
         answerSelected: false,
         isCorrect: false,
@@ -158,7 +165,7 @@ const Quiz: React.FC = () => {
         badges: newBadges,
       };
     });
-  }, []);
+  }, [questions.length, isLastQuestion]);
 
   const useHint = useCallback(() => {
     setGameState(prevState => ({ ...prevState, hintUsed: true }));
@@ -175,6 +182,7 @@ const Quiz: React.FC = () => {
       isCorrect: false,
       answeredWithoutHint: false,
     });
+    setIsQuizComplete(false);
   }, []);
 
   const toggleSound = useCallback(() => {
@@ -215,7 +223,7 @@ const Quiz: React.FC = () => {
     return <GameOver score={gameState.score} badges={gameState.badges} onReset={resetGame} />;
   }
 
-  if (gameState.currentLevel >= questions.length && questions.length > 0) {
+  if (isQuizComplete) {
     return <Completion score={gameState.score} badges={gameState.badges} onReset={resetGame} />;
   }
 
@@ -320,6 +328,7 @@ const Quiz: React.FC = () => {
             <Result
               isCorrect={gameState.isCorrect}
               explanation={currentQuestion.explanation}
+              isLastQuestion={isLastQuestion}
               onNext={nextLevel}
             />
           )}
