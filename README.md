@@ -155,7 +155,11 @@ git push
 
 ## 🤝 Contributing (Because Teamwork Makes the Dream Work)
 
-Got an idea that's so good it keeps you up at night? Here's how to make it a reality:
+Got an idea that's so good it keeps you up at night?
+
+Please refer to the [contributing guidelines](CONTRIBUTING.md) for more information.
+
+But in short:
 
 1. Fork this repo (it's like adopting, but for code)
 2. Create your feature branch: `git checkout -b my-new-feature`
