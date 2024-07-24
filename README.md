@@ -144,7 +144,7 @@ git push
 
 6. GitHub Actions will now automatically build and deploy your site when you push to the main branch.
 
-8. Watch in awe as your quiz magically appears at `https://yourusername.github.io/ypir-repo-name/`!
+8. Watch in awe as your quiz magically appears at `https://yourusername.github.io/your-repo-name/`!
 
 **Note**: The first deployment might take a few minutes. You can check the progress in the "Actions" tab of your GitHub repository.
 
