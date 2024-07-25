@@ -120,16 +120,12 @@ def most_frequent(arr):
 
 ## Explanation
 
-The correct answer is option 2: Using a hash map to count occurrences in a single pass.
-
 This solution is optimal because:
-
 1. It has a time complexity of O(n), where n is the length of the array.
 2. It only requires a single pass through the array.
 3. The space complexity is O(k), where k is the number of unique elements in the array.
 
 Here's a breakdown of how the function works:
-
 1. `defaultdict(int)` creates a dictionary where any new key is automatically initialized with a value of 0.
 2. The loop `for num in arr:` iterates through each element in the array.
 3. `count[num] += 1` increments the count for each number.

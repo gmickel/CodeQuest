@@ -8,6 +8,7 @@ Welcome to CodeQuest, the quiz game that's more addictive than trying to fix a b
 
 - 🧠 **Dynamic Question Loading**: Questions appear like magic, no rabbit (or developer) required!
 - ⏱️ **Time-based Challenges**: Race against the clock! (It's totally cool to pretend you're defusing a bomb)
+- 🔀 Flexible Answer Options: Support for both single and multiple correct answers in your questions
 - 🏋️ **Difficulty Levels**: From "I just learned to code" to "I dream in binary"
 - 🎨 **Snazzy Code Highlighting**: Making your code snippets look prettier than a sunset
 - 🔊 **Sound Effects**: Auditory dopamine hits for your correct answers!
@@ -22,13 +23,14 @@ Welcome to CodeQuest, the quiz game that's more addictive than trying to fix a b
 - 📝 **Markdown Support**: Write questions and answers in Markdown for easy formatting
 - 🔥 **Code Snippets**: Include code snippets to test your knowledge
 - 🖼️ **Images**: Include images to spice up your questions
-- 🧩 **Multiple Choice**: Create questions with multiple answer options
+- 🧩 Multiple Choice: Create questions with single or multiple correct answers
+- 📚 Explanations: Give detailed explanations for answers, including all correct options for multiple-answer questions
 - ⏳ **Time Limits**: Set time limits for each question to keep players on their toes
 - 🔢 **Difficulty Levels**: Assign difficulty levels to questions
 - 💡 **Hints**: Provide hints for when players get stuck
 - 📚 **Explanations**: Give detailed explanations for answers to enhance learning
 
-Check out `example-question.md` for a comprehensive example of all these features in action!
+Check out `example-question.md` for a comprehensive example of all these features in action! `example-question-two.md` shows how to create a question with multiple correct answers.
 
 ## 🧙‍♂️ Question Generation and Management (Let AI Do the Heavy Lifting)
 
@@ -179,6 +181,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - A big, cosmic thank you to [OpenEHR Quest](https://github.com/gmickel/openehr-quest) for being the primordial soup from which CodeQuest evolved!
 - Shoutout to caffeine, the true MVP of this project
+- High-five to our awesome community for suggesting and helping implement the multiple correct answers feature!
 - And finally, thanks to you, for reading this far. You're the real hero! 🦸‍♂️
 
 Now go forth and create quizzes that'll make people forget about doomscrolling! 🚀🧠🎉

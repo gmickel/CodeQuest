@@ -26,6 +26,7 @@ import HealthBar from '@/components/Quiz/HealthBar';
 import useSoundEffects from '@/hooks/useSoundEffects';
 import type { ParsedQuestion } from '@/lib/markdownParser.ts';
 import { loadAllQuestions } from '@/lib/markdownParser.ts';
+import { isCorrectAnswer } from '@/lib/quiz-utils';
 import { renderContent } from '@/components/RenderContent';
 import { config } from '@/config';
 import './styles.css';
@@ -67,7 +68,7 @@ const Quiz: React.FC = () => {
   const handleAnswer = useCallback((selectedIndex: number) => {
     setSelectedAnswer(selectedIndex);
     const currentQuestion = questions[gameState.currentLevel];
-    const isCorrect = selectedIndex === currentQuestion.correctAnswer - 1;
+    const isCorrect = isCorrectAnswer(currentQuestion, selectedIndex);
     const isTimedOut = selectedIndex === -1;
 
     setGameState((prevState) => {
@@ -92,7 +93,19 @@ const Quiz: React.FC = () => {
     }
 
     if (isTimedOut) {
-      setSelectedAnswer(currentQuestion.correctAnswer - 1);
+      // Handle timed out scenario for both single and multiple correct answers
+      if (currentQuestion.correctAnswer !== undefined) {
+        setSelectedAnswer(currentQuestion.correctAnswer - 1);
+      }
+      else if (currentQuestion.correctAnswers !== undefined && currentQuestion.correctAnswers.length > 0) {
+        // If multiple correct answers, select the first one
+        setSelectedAnswer(currentQuestion.correctAnswers[0] - 1);
+      }
+      else {
+        // Fallback if no correct answer is defined (shouldn't happen, but just in case)
+        console.error('No correct answer defined for the current question');
+        setSelectedAnswer(null);
+      }
     }
   }, [gameState.currentLevel, questions, soundEnabled, playCorrectSound, playWrongSound]);
 
@@ -317,17 +330,16 @@ const Quiz: React.FC = () => {
       <Card className="w-full max-w-4xl mt-4">
         <CardContent>
           <Answers
-            answers={currentQuestion.answers}
+            question={currentQuestion}
             onAnswer={handleAnswer}
             disabled={gameState.answerSelected}
             selectedAnswer={selectedAnswer}
-            correctAnswer={currentQuestion.correctAnswer}
             answered={gameState.answerSelected}
           />
           {gameState.answerSelected && (
             <Result
-              isCorrect={gameState.isCorrect}
-              explanation={currentQuestion.explanation}
+              question={currentQuestion}
+              selectedAnswer={selectedAnswer}
               isLastQuestion={isLastQuestion}
               onNext={nextLevel}
             />
